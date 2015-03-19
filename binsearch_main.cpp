@@ -25,13 +25,17 @@ int main(){
 		cin >> search_values[i];
 	}
 	
+	printf("Linear search:\n");
 	for(int i = 0; i < s; i++){
-		printf("Linear search for %i, found at %i\n", search_values[i], search.linear_search(test_array, search_values[i], n));
-		printf("Binary search for %i, found at %i\n", search_values[i], search.binary_search(test_array, search_values[i], n));
+		printf(search.linear_search(test_array, search_values[i], n) >= 0 ? "Yes\n" : "No\n");
+	}
+	
+	printf("Binary search:\n");
+	for(int i = 0; i < s; i++){
+		printf(search.binary_search(test_array, search_values[i], n) >= 0 ? "Yes\n" : "No\n");
 	}
 	
 	delete[] test_array;
 	delete[] search_values;
-	printf("n: %i, s: %i\n", n, s);
 	return 0;
 }
