@@ -24,22 +24,6 @@ int* SearchAlgorithms::sort_array(int sortable[], int size){
 }
 
 int SearchAlgorithms::binary_search(int sorted_haystack[], int needle, int size){
-	/*
-	// Gotta go fast, gotta go fast,
-	// Gotta go faster, faster, faster, faster, faster
-	
-	BinarySearchTree binary_search_tree; // It wouldn't be a binary search without one of these guys
-	
-	// Fill our tree. We could require our haystack to be a binary search tree, which would be faster when the same input is used multiple times, but that isn't in the specification
-	for(int i = 0; i < size; i++){
-		binary_search_tree.insert(haystack[i], i);
-	}
-	
-	binary_search_tree_node* result	=	binary_search_tree.search(needle);
-	if(result == NULL){
-		return -1;
-	}
-	return result->index;
-	*/
-
+	BinarySearchTree bst(sorted_haystack, size);
+	return bst.search(needle);
 }
