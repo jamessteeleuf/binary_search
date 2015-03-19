@@ -23,7 +23,8 @@ int* SearchAlgorithms::sort_array(int sortable[], int size){
 	return sortable;
 }
 
-int SearchAlgorithms::binary_search(int haystack[], int needle, int size){
+int SearchAlgorithms::binary_search(int sorted_haystack[], int needle, int size){
+	/*
 	// Gotta go fast, gotta go fast,
 	// Gotta go faster, faster, faster, faster, faster
 	
@@ -39,4 +40,6 @@ int SearchAlgorithms::binary_search(int haystack[], int needle, int size){
 		return -1;
 	}
 	return result->index;
+	*/
+
 }

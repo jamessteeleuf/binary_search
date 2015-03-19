@@ -30,12 +30,14 @@ int main(){
 		printf(search.linear_search(test_array, search_values[i], n) >= 0 ? "Yes\n" : "No\n");
 	}
 	
+	int* sorted_test_array	=	search.sort_array(test_array);
 	printf("Binary search:\n");
 	for(int i = 0; i < s; i++){
-		printf(search.binary_search(test_array, search_values[i], n) >= 0 ? "Yes\n" : "No\n");
+		printf(search.binary_search(sorted_test_array, search_values[i], n) >= 0 ? "Yes\n" : "No\n");
 	}
 	
 	delete[] test_array;
 	delete[] search_values;
+	delete[] sorted_test_array;
 	return 0;
 }
