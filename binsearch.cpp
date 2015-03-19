@@ -23,7 +23,6 @@ int* SearchAlgorithms::sort_array(int sortable[], int size){
 	return sortable;
 }
 
-int SearchAlgorithms::binary_search(int sorted_haystack[], int needle, int size){
-	BinarySearchTree bst(sorted_haystack, size);
-	return bst.search(needle);
+int SearchAlgorithms::binary_search(BinarySearchTree* bst, int needle){
+	return bst->search(needle);
 }

@@ -1,3 +1,6 @@
+#ifndef BST_H
+#define BST_H
+
 #include <cstddef>
 
 struct binary_search_tree_node{
@@ -18,10 +21,12 @@ private:
 
 		int midpoint					=	start + (end - start)/2;
 		binary_search_tree_node* node	=	new binary_search_tree_node();
+		
+		// Just set our default data, nothing too interesting here
 		node->value						=	sorted_array[midpoint];
 		node->index						=	midpoint;
-		node->left						=	this->sorted_array_to_BST(sorted_array, start, mid-1);
-		node->right						=	this->sorted_array_to_BST(sorted_array, mid+1, end);
+		node->left						=	this->sorted_array_to_BST(sorted_array, start, midpoint-1);
+		node->right						=	this->sorted_array_to_BST(sorted_array, midpoint+1, end);
 		return node;
 	}
 
@@ -46,7 +51,8 @@ private:
 	}
 public:
 	BinarySearchTree(int sorted_array[], int n){
-		this->root	=	this->sorted_array_to_BST(sorted_array, 0, n -1);
+		// Create a BST from our array
+		this->root	=	this->sorted_array_to_BST(sorted_array, 0, n - 1);
 	}
 
 	~BinarySearchTree(){
@@ -69,10 +75,12 @@ public:
 
 		// If our active node is null after all this, it means that the needle is not in the haystack :(
 		if(active_node == NULL){
-			return active_node;
+			return -1;
 		}
 		
 		// Return the position of the node if it is found
 		return active_node->index;
 	}
 };
+
+#endif
